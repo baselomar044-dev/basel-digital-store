@@ -5,6 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Basel Digital — AI & Construction Software Store</title>
 <meta name="description" content="21 Professional Software Products: AI Tools, Construction QS Systems, Arabic AI Apps. Built by Basel Omar, Quantity Surveyor & AI Developer from UAE.">
+<meta name="keywords" content="QTO software, quantity takeoff, BOQ generator, construction software, Dubai QS tools, Arabic AI, PlanSwift alternative, site engineer app, construction management software">
+<meta property="og:title" content="Basel Digital — AI & Construction Software Store">
+<meta property="og:description" content="21 Professional Software Products for Construction Engineers, QS Professionals, and Arabic-first AI users. From $15.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://baselomar044-dev.github.io/basel-digital-store/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Basel Digital — 21 AI & Construction Tools">
+<meta name="twitter:description" content="Professional software for QS, construction, and Arabic AI. Built by a QS Engineer from UAE. From $15.">
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   :root{
@@ -96,6 +104,26 @@
   /* ANIMATE IN */
   .card{opacity:0;transform:translateY(20px);animation:fadeUp .5s forwards}
   @keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
+
+  /* BUY MODAL */
+  .modal-overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.8);backdrop-filter:blur(10px);z-index:1000;align-items:center;justify-content:center}
+  .modal-overlay.show{display:flex}
+  .modal{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:40px;max-width:480px;width:90%;text-align:center;position:relative;animation:fadeUp .3s}
+  .modal h2{font-size:1.4rem;margin-bottom:8px}
+  .modal .modal-price{font-size:2rem;font-weight:800;color:var(--green);margin:12px 0}
+  .modal .modal-desc{font-size:.9rem;color:var(--muted);margin-bottom:24px}
+  .modal-close{position:absolute;top:16px;right:16px;background:none;border:none;color:var(--muted);font-size:1.5rem;cursor:pointer}
+  .modal-close:hover{color:var(--text)}
+  .modal-buttons{display:flex;flex-direction:column;gap:12px}
+  .modal-btn{padding:14px 24px;border-radius:30px;border:none;font-weight:700;font-size:1rem;cursor:pointer;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:8px;transition:all .3s}
+  .modal-btn.paypal{background:#0070ba;color:#fff}
+  .modal-btn.paypal:hover{background:#005ea6;transform:scale(1.02)}
+  .modal-btn.whatsapp{background:#25D366;color:#fff}
+  .modal-btn.whatsapp:hover{background:#1da851;transform:scale(1.02)}
+  .modal-btn.email{background:var(--surface);color:var(--text);border:1px solid var(--border)}
+  .modal-btn.email:hover{border-color:var(--accent)}
+  .modal-trust{display:flex;gap:16px;justify-content:center;margin-top:20px;font-size:.75rem;color:var(--muted)}
+  .modal-trust span{display:flex;align-items:center;gap:4px}
 </style>
 </head>
 <body>
@@ -971,7 +999,64 @@
   <p style="color:var(--muted);font-size:.75rem;margin-top:20px">&copy; 2026 Basel Digital. All rights reserved.</p>
 </footer>
 
+<!-- BUY MODAL -->
+<div class="modal-overlay" id="buyModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeBuyModal()">&times;</button>
+    <h2 id="modalTitle"></h2>
+    <div class="modal-price" id="modalPrice"></div>
+    <div class="modal-desc">Instant delivery after payment. Full source code + documentation included.</div>
+    <div class="modal-buttons">
+      <a class="modal-btn paypal" id="modalPaypal" href="#" target="_blank">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.69 1.81 1.01 1.15 1.304 2.42 1.012 4.287-.023.143-.047.288-.077.437-.983 5.05-4.349 6.797-8.647 6.797H9.603c-.564 0-1.04.413-1.127.968L7.076 21.337z"/></svg>
+        Pay with PayPal
+      </a>
+      <a class="modal-btn whatsapp" id="modalWhatsapp" href="#" target="_blank">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 0 0 .611.611l4.458-1.495A11.943 11.943 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.352 0-4.556-.764-6.343-2.088l-.356-.27-2.638.885.885-2.638-.27-.356A9.96 9.96 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        Order via WhatsApp
+      </a>
+      <a class="modal-btn email" id="modalEmail" href="#">
+        ✉️ Order via Email
+      </a>
+    </div>
+    <div class="modal-trust">
+      <span>🔒 Secure Payment</span>
+      <span>📦 Instant Delivery</span>
+      <span>💻 Full Source Code</span>
+    </div>
+  </div>
+</div>
+
 <script>
+// BUY MODAL
+function openBuyModal(title, price) {
+  const modal = document.getElementById('buyModal');
+  document.getElementById('modalTitle').textContent = title;
+  document.getElementById('modalPrice').textContent = price;
+  const amount = price.replace('$','');
+  const msg = encodeURIComponent('Hi Basel, I want to buy: ' + title + ' (' + price + '). Please send me the download link after payment.');
+  const emailSubject = encodeURIComponent('Purchase: ' + title + ' - ' + price);
+  const emailBody = encodeURIComponent('Hi Basel,\n\nI would like to purchase: ' + title + ' (' + price + ').\n\nPlease send me payment details and the download link.\n\nThank you!');
+  document.getElementById('modalPaypal').href = 'https://paypal.me/beaseomar/' + amount;
+  document.getElementById('modalWhatsapp').href = 'https://wa.me/971545472423?text=' + msg;
+  document.getElementById('modalEmail').href = 'mailto:basel.omar.qs@gmail.com?subject=' + emailSubject + '&body=' + emailBody;
+  modal.classList.add('show');
+}
+function closeBuyModal() { document.getElementById('buyModal').classList.remove('show'); }
+document.getElementById('buyModal').addEventListener('click', function(e) { if(e.target===this) closeBuyModal(); });
+
+// WIRE UP ALL BUY BUTTONS
+document.querySelectorAll('.buy-btn').forEach(btn => {
+  btn.addEventListener('click', function(e) {
+    e.preventDefault();
+    const card = this.closest('.card');
+    const title = card.querySelector('.card-title').textContent;
+    const priceEl = card.querySelector('.price');
+    const price = priceEl.textContent.replace(/.*\$/,'$');
+    openBuyModal(title, price);
+  });
+});
+
 // FILTER
 document.querySelectorAll('.filter-btn').forEach(btn=>{
   btn.addEventListener('click',()=>{
